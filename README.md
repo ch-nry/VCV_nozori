@@ -1,6 +1,8 @@
 # Nozori modules for VCVRack
 This is a port of nozori eurorack module for VCV Rack. This emulation are based on the same firmware as the nozori hardware made by nozoïd.
 
+<img src="docs/nozori.jpg" alt="nozori" height="420px"/>
+
 A single Nozori module allow to switch between all this firmware.
 
 http://nozoid.com/nozori/ : documentation and demo videos about this modules. 
