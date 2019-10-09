@@ -1,5 +1,5 @@
 # Nozori modules for VCVRack
-Thid is a port of nozori eurorack module for VCV Rack. This emulation are based on the same firmware as the nozori hardware made by nozoïd
+This is a port of nozori eurorack module for VCV Rack. This emulation are based on the same firmware as the nozori hardware made by nozoïd.
 
 A single Nozori module allow to switch between all this firmware.
 
