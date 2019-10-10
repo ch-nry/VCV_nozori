@@ -2,7 +2,7 @@
   "slug": "Nozoid",
   "name": "Nozoid",
   "version": "1.0.0",
-  "license": "GPL v3",
+  "license": "GPL-3.0-or-later",
   "brand": "nozoïd",
   "author": "Cyrille Henry",
   "authorEmail": "vcv@nozoid.com",
