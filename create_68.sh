@@ -22,7 +22,7 @@ echo "    {" >> plugin.json
 echo "      \"slug\": \"Nozori_all\"," >> plugin.json 
 echo "      \"name\": \"Nozori_all\"," >> plugin.json 
 echo "      \"description\": \"\"," >> plugin.json 
-echo "      \"tags\": [\"nozoïd\", \"nozori\"]" >> plugin.json 
+echo "      \"tags\": []" >> plugin.json 
 echo "    }" >> plugin.json 
 echo "    ," >> plugin.json 
 
