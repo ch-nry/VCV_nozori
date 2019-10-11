@@ -36,5 +36,5 @@ sed -i '$ d' plugin.json
 echo "  ]" >> plugin.json 
 echo "}" >> plugin.json 
 
-make install
+RACK_DIR=.. make install
 
