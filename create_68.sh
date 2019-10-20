@@ -1,4 +1,4 @@
-cp template_nozori_68/src/nozori_68.cpp src/$1.cpp
+cp template_nozori/src/nozori_68.cpp src/$1.cpp
 
 sed -i 's/Nozori_all/'$1'/g' src/$1.cpp
 sed -i 's/module_src_file.ino/'$2'/' src/$1.cpp
