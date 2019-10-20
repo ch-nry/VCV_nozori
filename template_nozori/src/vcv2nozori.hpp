@@ -51,6 +51,18 @@
     IN1_connect = inputs[IN1_INPUT].isConnected()? 0 : 100; \
     IN2_connect = inputs[IN2_INPUT].isConnected()? 0 : 100; 
 
+#define filter16_nozori_84  \
+    CV_filter16_out[index_filter_pot1]= (uint32_t)(65535 * params[POT1_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot2]= (uint32_t)(65535 * params[POT2_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot3]= (uint32_t)(65535 * params[POT3_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot4]= (uint32_t)(65535 * params[POT4_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot5]= (uint32_t)(65535 * params[POT5_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot6]= (uint32_t)(65535 * params[POT6_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot7]= (uint32_t)(65535 * params[POT7_PARAM].getValue()); \
+    CV_filter16_out[index_filter_pot8]= (uint32_t)(65535 * params[POT8_PARAM].getValue()); \
+    IN1_connect = inputs[IN1_INPUT].isConnected()? 0 : 100; \
+    IN2_connect = inputs[IN2_INPUT].isConnected()? 0 : 100; 
+
 #define REG_CV1 CV_filter16_out[index_filter_CV1]
 
 // Calibration value : this are const in VCV since there are no hardware variation (no ADC to calibrate)
@@ -69,7 +81,6 @@ const uint32_t CV2_1V = (48<<18) / CV2_1Vminus0V;
 const uint32_t CV3_1V = (48<<18) / CV3_1Vminus0V;
 const uint32_t CV4_1V = (48<<18) / CV4_1Vminus0V;
 
-// TODO
 const int32_t IN1_0V = 1<<31; // valeur moyenne qd il n'y a pas de calibration valable
 const int32_t IN1_1V_value = (0xFFFFFF00/14); // idem
 const int32_t IN1_1V = (48<<18) / (IN1_1V_value>>16); //avec un CV sur 16 bit seulement :  pitch = ((audio_inL-(1<<31)>>16)*IN1_1V)
