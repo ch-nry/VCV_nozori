@@ -32,7 +32,6 @@
 
 int32_t out_oldX1, out_oldX2, out_oldX3, out_oldX4;
 int32_t out_oldY1, out_oldY2, out_oldY3, out_oldY4;
-uint32_t curve_log, curve_exp;
 
 inline void DEJONG_LFO_init_() {
   send_dac(0x08,0b000000001); // sampling control (usb , 250fs,  48K, clock div 2, clk out, active)

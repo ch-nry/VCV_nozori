@@ -30,7 +30,7 @@
 // OUT 1 : POS OUT (CLOCK)
 // OUT 2 : SEQ OUT
 
-const uint32_t tab_pot[] = {index_filter_pot3, index_filter_pot4, index_filter_pot5, index_filter_pot6, index_filter_pot7, index_filter_pot8, index_filter_pot3, 0, 0, 0, 0, 0, 0, index_filter_pot6, index_filter_pot7, index_filter_pot8};
+const uint32_t tab_pot[16] = {index_filter_pot3, index_filter_pot4, index_filter_pot5, index_filter_pot6, index_filter_pot7, index_filter_pot8, index_filter_pot3, 0, 0, 0, 0, 0, 0, index_filter_pot6, index_filter_pot7, index_filter_pot8};
 
 inline void LFO_SEQ_init_() {
 }
