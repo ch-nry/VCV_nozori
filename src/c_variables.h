@@ -127,4 +127,6 @@ uint32_t nb_tick1, nb_tick2;
 // VCO 
 uint32_t VCO1_PWM_save, freq_save, pwm_save;
 
-
+//
+uint32_t curve_log, curve_exp;
+uint32_t mod1_save, mod2_save;
