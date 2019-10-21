@@ -56,4 +56,50 @@ void init(Plugin* p) {
   p->addModel(modelNozori_68_VCO_WS);
 
   p->addModel(modelNozori_68_WS);
+
+  p->addModel(modelNozori_84_8_BITS);
+
+  p->addModel(modelNozori_84_ADD);
+
+  p->addModel(modelNozori_84_ADSR);
+
+  p->addModel(modelNozori_84_CLOCK);
+
+  p->addModel(modelNozori_84_DOPPLER);
+
+  p->addModel(modelNozori_84_FM);
+
+  p->addModel(modelNozori_84_FM_LIN);
+
+  p->addModel(modelNozori_84_HARMONICS);
+
+  p->addModel(modelNozori_84_JONG_LFO);
+
+  p->addModel(modelNozori_84_JONG_VCO);
+
+  p->addModel(modelNozori_84_LFO);
+
+  p->addModel(modelNozori_84_LFO_SEQ);
+
+  p->addModel(modelNozori_84_MODULATE);
+
+  p->addModel(modelNozori_84_PARAM);
+
+  p->addModel(modelNozori_84_SEQ_4);
+
+  p->addModel(modelNozori_84_SEQ_8);
+
+  p->addModel(modelNozori_84_SIN_AM);
+
+  p->addModel(modelNozori_84_SIN_FM);
+
+  p->addModel(modelNozori_84_SIN_PM);
+
+  p->addModel(modelNozori_84_SIN_WS);
+
+  p->addModel(modelNozori_84_THOMAS);
+
+  p->addModel(modelNozori_84_VCF);
+
+  p->addModel(modelNozori_84_WS);
 }
