@@ -54,6 +54,7 @@ inline uint32_t random32() {
 
 // ------------------------------------------------------------------------------------------------------------
 void test_connect_loop_68() {} // No need to test the phisical connection since VCV it's accesible in VCV API
+void test_connect_loop_84() {}
 
 // ------------------------------------------------------------------------------------------------------------
 // LEDS
