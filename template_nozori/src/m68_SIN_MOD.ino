@@ -32,7 +32,7 @@
 // OUT 1 : OUT
 // OUT 2 : OUT
 
-uint32_t mod1_save, mod2_save;
+
 uint32_t mod1_global, mod2_global;
 
 inline void VCO_SIN_MOD_init_() {
