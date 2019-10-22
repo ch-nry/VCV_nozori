@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="-55.64549"
-     inkscape:cy="17.439019"
+     inkscape:zoom="11.2"
+     inkscape:cx="18.512237"
+     inkscape:cy="31.603086"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -53,15 +53,33 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     style="display:inline">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#292929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.28259939"
+       d="m 17.110482,9.500195 c 0,4.203666 -3.40772,7.610314 -7.61028,7.610314 -4.2036697,0 -7.6103198,-3.406648 -7.6103198,-7.610314 0,-4.2025609 3.4066501,-7.6103119 7.6103198,-7.6103119 4.20256,0 7.61028,3.407751 7.61028,7.6103119"
+       id="path110586-5" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#110000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.22775178"
+       d="m 15.605005,9.5001952 c 0,3.4035968 -2.733601,6.1618678 -6.1048069,6.1618678 -3.3720948,0 -6.104838,-2.758271 -6.104838,-6.1618678 0,-3.4027017 2.7327432,-6.1618666 6.104838,-6.1618666 3.3712059,0 6.1048069,2.7591649 6.1048069,6.1618666"
+       id="path110586-7" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-98.209438,-77.425955)">
-    <path
-       inkscape:connector-curvature="0"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.28259939"
-       d="m 115.31992,86.92615 c 0,4.203666 -3.40772,7.610314 -7.61028,7.610314 -4.20367,0 -7.61032,-3.406648 -7.61032,-7.610314 0,-4.202561 3.40665,-7.610312 7.61032,-7.610312 4.20256,0 7.61028,3.407751 7.61028,7.610312"
-       id="path110586" />
+     transform="translate(-98.209438,-77.425955)"
+     style="display:inline">
     <path
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.43299729"
