@@ -153,6 +153,12 @@ struct warningText_96 : BASE {
 	}
 };
 
+struct NozoriKnob : RoundKnob {
+	NozoriKnob() {
+		setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/NozoriKnob.svg")));
+	}
+};
+
 struct Nozori_68_LFOWidget : ModuleWidget {
 	Nozori_68_LFOWidget(Nozori_68_LFO* module) {
 		setModule(module);
@@ -163,12 +169,12 @@ struct Nozori_68_LFOWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 30.3)), module, Nozori_68_LFO::POT2_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 30.3)), module, Nozori_68_LFO::POT1_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 52.8)), module, Nozori_68_LFO::POT3_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 52.8)), module, Nozori_68_LFO::POT4_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 75.1)), module, Nozori_68_LFO::POT5_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 75.1)), module, Nozori_68_LFO::POT6_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 30.3)), module, Nozori_68_LFO::POT2_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 30.3)), module, Nozori_68_LFO::POT1_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 52.8)), module, Nozori_68_LFO::POT3_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 52.8)), module, Nozori_68_LFO::POT4_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 75.1)), module, Nozori_68_LFO::POT5_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 75.1)), module, Nozori_68_LFO::POT6_PARAM));
 
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(49.3, 98.0)), module, Nozori_68_LFO::CV4_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(36.8, 98.0)), module, Nozori_68_LFO::CV3_INPUT));

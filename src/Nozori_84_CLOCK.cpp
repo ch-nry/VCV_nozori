@@ -153,6 +153,12 @@ struct warningText_96 : BASE {
 	}
 };
 
+struct NozoriKnob : RoundKnob {
+	NozoriKnob() {
+		setSvg(APP->window->loadSvg(asset::plugin(pluginInstance, "res/NozoriKnob.svg")));
+	}
+};
+
 struct Nozori_84_CLOCKWidget : ModuleWidget {
 	Nozori_84_CLOCKWidget(Nozori_84_CLOCK* module) {
 		setModule(module);
@@ -163,14 +169,14 @@ struct Nozori_84_CLOCKWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 30.3)), module, Nozori_84_CLOCK::POT2_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 30.3)), module, Nozori_84_CLOCK::POT1_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 52.8)), module, Nozori_84_CLOCK::POT3_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 52.8)), module, Nozori_84_CLOCK::POT4_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 75.1)), module, Nozori_84_CLOCK::POT5_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 75.1)), module, Nozori_84_CLOCK::POT6_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(15.1, 97.5)), module, Nozori_84_CLOCK::POT7_PARAM));
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(46.1, 97.5)), module, Nozori_84_CLOCK::POT8_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 30.3)), module, Nozori_84_CLOCK::POT2_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 30.3)), module, Nozori_84_CLOCK::POT1_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 52.8)), module, Nozori_84_CLOCK::POT3_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 52.8)), module, Nozori_84_CLOCK::POT4_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 75.1)), module, Nozori_84_CLOCK::POT5_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 75.1)), module, Nozori_84_CLOCK::POT6_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(15.1, 97.5)), module, Nozori_84_CLOCK::POT7_PARAM));
+		addParam(createParamCentered<NozoriKnob>(mm2px(Vec(46.1, 97.5)), module, Nozori_84_CLOCK::POT8_PARAM));
 
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(11.9, 113.3)), module, Nozori_84_CLOCK::IN1_INPUT));
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(24.4, 113.3)), module, Nozori_84_CLOCK::IN2_INPUT));
