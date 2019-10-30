@@ -99,6 +99,8 @@ void init(Plugin* p) {
 
   p->addModel(modelNozori_84_THOMAS);
 
+  p->addModel(modelNozori_84_TROPICAL);
+
   p->addModel(modelNozori_84_VCF);
 
   p->addModel(modelNozori_84_WS);

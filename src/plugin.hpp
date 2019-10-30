@@ -53,5 +53,6 @@ extern Model* modelNozori_84_SIN_FM;
 extern Model* modelNozori_84_SIN_PM;
 extern Model* modelNozori_84_SIN_WS;
 extern Model* modelNozori_84_THOMAS;
+extern Model* modelNozori_84_TROPICAL;
 extern Model* modelNozori_84_VCF;
 extern Model* modelNozori_84_WS;
