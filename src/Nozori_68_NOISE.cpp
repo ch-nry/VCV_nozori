@@ -159,6 +159,12 @@ struct NozoriKnob : RoundKnob {
 	}
 };
 
+struct NoLight : GrayModuleLightWidget {
+ 	NoLight() {
+ 		addBaseColor(SCHEME_BLACK);
+ 	}
+};
+
 struct Nozori_68_NOISEWidget : ModuleWidget {
 	Nozori_68_NOISEWidget(Nozori_68_NOISE* module) {
 		setModule(module);
@@ -190,8 +196,8 @@ struct Nozori_68_NOISEWidget : ModuleWidget {
 		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(2.9, 41.5)), module, Nozori_68_NOISE::LED2_LIGHT));
 
 		addParam(createParamCentered<NKK>(mm2px(Vec(30.6, 14.3)), module, Nozori_68_NOISE::SWITCH_PARAM));
-		addChild(createLightCentered<warningText_48<RedLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_68_NOISE::TEXT_LIGHT_48));
-		addChild(createLightCentered<warningText_96<RedLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_68_NOISE::TEXT_LIGHT_96));
+		addChild(createLightCentered<warningText_48<NoLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_68_NOISE::TEXT_LIGHT_48));
+		addChild(createLightCentered<warningText_96<NoLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_68_NOISE::TEXT_LIGHT_96));
 	}
 };
 

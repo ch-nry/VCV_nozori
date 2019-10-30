@@ -159,6 +159,12 @@ struct NozoriKnob : RoundKnob {
 	}
 };
 
+struct NoLight : GrayModuleLightWidget {
+ 	NoLight() {
+ 		addBaseColor(SCHEME_BLACK);
+ 	}
+};
+
 struct Nozori_84_8_BITSWidget : ModuleWidget {
 	Nozori_84_8_BITSWidget(Nozori_84_8_BITS* module) {
 		setModule(module);
@@ -188,8 +194,8 @@ struct Nozori_84_8_BITSWidget : ModuleWidget {
 		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(2.9, 41.5)), module, Nozori_84_8_BITS::LED2_LIGHT));
 
 		addParam(createParamCentered<NKK>(mm2px(Vec(30.6, 14.3)), module, Nozori_84_8_BITS::SWITCH_PARAM));
-		addChild(createLightCentered<warningText_48<RedLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_84_8_BITS::TEXT_LIGHT_48));
-		addChild(createLightCentered<warningText_96<RedLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_84_8_BITS::TEXT_LIGHT_96));
+		addChild(createLightCentered<warningText_48<NoLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_84_8_BITS::TEXT_LIGHT_48));
+		addChild(createLightCentered<warningText_96<NoLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_84_8_BITS::TEXT_LIGHT_96));
 	}
 };
 
