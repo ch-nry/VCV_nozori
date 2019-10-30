@@ -52,6 +52,7 @@ rm src/nozori_84.cpp
 ./create_84.sh Nozori_84_SIN_PM      m84_Sin_PM.ino      sin_PM          nozori_84_SIN_PM.svg
 ./create_84.sh Nozori_84_SIN_WS      m84_Sin_WS.ino      SIN_WS          nozori_84_SIN_WS.svg
 ./create_84.sh Nozori_84_THOMAS      m84_Thomas.ino      THOMAS          nozori_84_THOMAS.svg
+./create_84.sh Nozori_84_TROPICAL    m84_Tropical.ino    VCO_Tropical    nozori_84_TROPICAL.svg
 ./create_84.sh Nozori_84_VCF         m84_VCF_MORPH.ino   VCF_Param84     nozori_84_VCF.svg
 ./create_84.sh Nozori_84_WS          m84_Stereo_WS.ino   Stereo_WS       nozori_84_WS.svg
 
