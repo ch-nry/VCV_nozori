@@ -36,7 +36,7 @@ inline void LFO_SEQ_init_() {
 }
 
 inline void LFO_SEQ_loop_() {
-  uint32_t toggle, tmp, macro_tmp;
+  uint32_t toggle, tmp;
   int32_t tmpS, freq;
   
   filter16_nozori_84

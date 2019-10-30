@@ -67,7 +67,6 @@ inline void VCO_SIN_MOD_loop_() {
 inline void VCO_SIN_MOD_audio_() {
   uint32_t tmp, tmp2;
   int32_t freq, tmpS;
-  int32_t outS;
   uint32_t out, out2, tlg, PM_phase;
   int32_t mod1, mod2;
   uint32_t clip_audio;

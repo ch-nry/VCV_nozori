@@ -45,7 +45,7 @@ inline void SEQ8_loop_() {
 }
 
 inline void SEQ8_audio_() {
-  uint32_t toggle, inR, inL, increment, tmp, skip;
+  uint32_t toggle, inR, inL, tmp, skip;
   int32_t tmpS;
   
   toggle = get_toggle();

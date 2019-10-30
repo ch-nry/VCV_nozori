@@ -213,7 +213,7 @@ inline void CLK_ADSR_loop_() {
 }
 
 inline void CLK_ADSR_audio_() { 
-  uint32_t ADSR1_out_tmp, ADSR2_out_tmp;
+  uint32_t ADSR1_out_tmp;
   int32_t tmpS;
   
   LFO1_phase += LFO1_increment;

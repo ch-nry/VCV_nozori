@@ -44,7 +44,6 @@ inline void Doppler_init_() {
 
 inline void Doppler_loop_() {
   int32_t freq;
-  uint32_t tmp;
   uint32_t freq_MSB, freq_LSB;
   uint32_t increment1, increment2;
 
@@ -77,7 +76,7 @@ inline void Doppler_loop_() {
 
 inline void Doppler_audio_() {  
   uint32_t delay_time1, delay_time2;
-  int32_t audio_out, out1, out2;
+  int32_t out1, out2;
   uint32_t delay_time, delay_time_LSB, read_point;
   uint32_t time1, time2, mod1, mod2, mod3, mod4;
   int32_t tmpS, tmpS2;

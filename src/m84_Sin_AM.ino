@@ -42,7 +42,7 @@ inline uint32_t modulation_AM(uint32_t in, uint32_t amount) {
 }
 
 inline uint32_t modulation_AM_U(uint32_t in, uint32_t amount) {
-  uint32_t tmp, tmp2;
+  uint32_t tmp;
   tmp = 0xFFFFFFFF-amount;
   tmp = (tmp >> 16) * (in >>16);
   return( tmp );
@@ -94,7 +94,6 @@ inline void sin_AM_loop_() {
 }
 
 inline void sin_AM_audio_() {
-  int32_t outS, tmpS, freq;
   uint32_t tmp, out, out2, modulation1, modulation2, modulation3;
 
   switch (get_toggle()) {

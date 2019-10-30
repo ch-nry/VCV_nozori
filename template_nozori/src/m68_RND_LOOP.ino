@@ -151,7 +151,7 @@ inline void RND_LOOP_loop_() {
 }
 
 inline void RND_LOOP_audio_() {
-  uint32_t current_tick, increment1;
+  uint32_t increment1;
   uint32_t current_step, tmp,tmp2,  outX, outY, toggle;
   int32_t tmpS, outSX, outSY;
 

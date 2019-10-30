@@ -40,7 +40,7 @@ inline void VCO_Tropical_init_() {
 }
 
 inline void VCO_Tropical_loop_() {
-  int32_t tmpS, macro_tmp;
+  int32_t tmpS;
 
   filter16_nozori_84
   test_connect_loop_84();
@@ -84,10 +84,7 @@ inline void VCO_Tropical_loop_() {
 
 inline void VCO_Tropical_audio_() {
   uint32_t tmp, tmp2;
-  int32_t tmpS;
-  int32_t outS, outS2;
   uint32_t out, out2;
-  int32_t freq;
 
   VCO1_phase   += increment_0<<3;
   VCO_H1_phase += increment_1<<3;

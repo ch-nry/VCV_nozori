@@ -66,7 +66,7 @@ inline void SEQ4_loop_() {
 }
 
 inline void SEQ4_audio_() {
-  uint32_t time_all, toggle, tmp;
+  uint32_t toggle, tmp;
   int32_t tmpS;
   nb_tick++;
 

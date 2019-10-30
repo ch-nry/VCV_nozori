@@ -38,7 +38,6 @@ inline void OSC_Param_init_() {
 
 inline void OSC_Param_loop_() {
   int32_t tmpS;
-  uint32_t macro_tmp;
 
   filter16_nozori_84
   test_connect_loop_84();
@@ -55,7 +54,6 @@ inline void OSC_Param_loop_() {
 }
 
 inline void OSC_Param_audio_() {
-  int32_t outS, tmpS;
   uint32_t pos, out, interpolation;
   uint32_t value1, value2, value3, value4;
 

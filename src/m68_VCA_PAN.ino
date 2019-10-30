@@ -44,7 +44,7 @@ inline void Pan_loop_() {
   uint32_t Gain1_local, Gain2_local;
   int32_t Pan1_local, Pan2_local, CVgain1_local, CVgain2_local;
   int32_t tmpS, CV1_value, CV2_value, CV3_value, CV4_value;
-  uint32_t toggle, tmp;
+  uint32_t toggle;
 
   filter16_nozori_68
   test_connect_loop_68();
@@ -132,7 +132,7 @@ inline void Pan_audio_() {
   int32_t inL, inR, outL, outR, tmpS;
   uint32_t Gain1_local, Gain2_local;
   int32_t Pan1_local, Pan2_local, CVgain1_local, CVgain2_local;
-  uint32_t toggle, tmp, panL, panR;
+  uint32_t panL, panR;
   
   if (IN1_connect < 60) inL = (audio_inL^0x80000000); else inL = 0;
   if (IN2_connect < 60) inR = (audio_inR^0x80000000); else inR = 0;

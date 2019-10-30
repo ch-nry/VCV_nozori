@@ -70,7 +70,7 @@ inline void CV_REC_loop_() {
 inline void CV_REC_audio_() {
   int32_t modulation1, modulation2;
   uint32_t toggle, pos, current_tick, increment1;
-  int32_t tmpS, tmp;
+  int32_t tmpS;
   int32_t out1, out2;
 
   toggle = toggle_global;

@@ -164,8 +164,7 @@ inline void Gran_loop_() {
 
 inline void Gran_audio_() {
   int32_t tmpS;
-  uint32_t tmp, pos_relative_LSB, pos_relative_MSB, pos_lecture;
-  uint32_t index_lecture;
+  uint32_t pos_relative_MSB;
   uint32_t delay_time_LSB, delay_time_MSB, read_point, out, envelope;
   int32_t  out1, out2, outS;
   uint32_t toggle;

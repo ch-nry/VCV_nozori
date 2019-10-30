@@ -51,12 +51,10 @@ inline void VCF_init_() {
 }
 
 inline void VCF_loop_() {
-  uint32_t tmp, tmp2, toggle;
+  uint32_t toggle;
   int32_t tmpS;
-  int32_t freq2, fader, fader2, faderA, faderB, faderC, faderD;
-  int32_t reso_local, reso2_local;
-  int32_t CV1_value, CV2_value, CV3_value, CV4_value;
-  int32_t G1_tmp, G2_tmp, G3_tmp, G5_tmp;
+  int32_t reso_local;
+  int32_t CV2_value, CV3_value, CV4_value;
 
   filter16_nozori_68
   //test_connect_loop_68();
@@ -141,7 +139,7 @@ inline void VCF_loop_() {
 }
 
 inline void VCF_audio_() {
-  int32_t in, out, tmp, tmp1, VCF_out, inR;
+  int32_t in, tmp, tmp1, VCF_out, inR;
   int32_t freq;
 
   // Left

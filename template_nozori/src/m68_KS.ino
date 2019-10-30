@@ -40,8 +40,8 @@ inline void KS_init_() {
 }
 
 inline void KS_loop_() {
-  uint32_t delay_time, FB, filter_LOP;
-  int32_t tmpS, CV1_value, CV2_value, CV3_value, CV4_value;
+  uint32_t FB;
+  int32_t tmpS, CV2_value, CV3_value;
   int32_t freq, gain;
   uint32_t toggle;
   
@@ -112,7 +112,7 @@ inline void KS_loop_() {
 inline void KS_audio_() {
   int32_t audio_in, tmpS, outS, out2S;
   int32_t audio_out, delay_out, out1, out2, feedback_out;
-  uint32_t delay_time, FB, gain, delay_time_LSB, read_point, filter_LOP, tmp;
+  uint32_t delay_time, FB, gain, delay_time_LSB, read_point, filter_LOP;
   uint32_t pluck_filter;
   uint32_t toggle, out;
 

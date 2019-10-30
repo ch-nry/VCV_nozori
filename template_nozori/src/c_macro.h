@@ -209,7 +209,7 @@ uint32_t increment1, increment2;                            \
 
 # define macro_out_gain_pan                                           \
 uint32_t macro_panR, macro_panL, macro_outL, macro_outR;              \
-int32_t macro_outS, macro_tmp, macro_tmp2, macro_tmp3;                \
+int32_t macro_outS, macro_tmp2, macro_tmp3;                \
   if (IN1_connect < 60) {                                             \
     macro_outS = (audio_inL>>1) - (IN1_0V>>1);                        \
     macro_outS = _min(0x2AAAAAAA,macro_outS);                         \
@@ -257,8 +257,7 @@ int32_t macro_outS, macro_tmp, macro_tmp2, macro_tmp3;                \
 
 
   # define macro_out_gainL_stereo                                     \
-uint32_t macro_panR, macro_panL, macro_outL, macro_outR;              \
-int32_t macro_outS, macro_tmp, macro_tmp2, macro_tmp3;                \
+  int32_t macro_outS;                \
   if (IN1_connect < 60) {                                             \
     macro_outS = (audio_inL>>1) - (IN1_0V>>1);                        \
     macro_outS = _min(0x2AAAAAAA,macro_outS);                         \
@@ -331,7 +330,7 @@ int32_t macro_outS;                \
 
 # define macro_out_gain_pan_stereo2                                   \
 uint32_t macro_panR, macro_panL, macro_outL, macro_outR;              \
-int32_t macro_outS, macro_tmp, macro_tmp2, macro_tmp3;                \
+int32_t macro_outS;                \
   if (IN1_connect < 60) {                                             \
     macro_outS = (audio_inL>>1) - (IN1_0V>>1);                        \
     macro_outS = _min(0x2AAAAAAA,macro_outS);                         \
@@ -367,7 +366,7 @@ int32_t macro_outS, macro_tmp, macro_tmp2, macro_tmp3;                \
   }
 
 #define macro_out_pan                                                 \
-uint32_t macro_panR, macro_panL, macro_outL, macro_outR, macro_tmp;   \
+uint32_t macro_panR, macro_panL, macro_outL, macro_outR;   \
   if (IN2_connect < 60) {                                             \
     out ^= 0x80000000;                                                \
     macro_panR = audio_inR;                                           \
@@ -389,7 +388,7 @@ uint32_t macro_panR, macro_panL, macro_outL, macro_outR, macro_tmp;   \
   }
 
 #define macro_out_pan_stereo                                          \
-uint32_t macro_panR, macro_panL, macro_outL, macro_outR, macro_tmp;   \
+uint32_t macro_panR, macro_panL, macro_outL, macro_outR;   \
   if (IN2_connect < 60) {                                             \
     out ^= 0x80000000;                                                \
     macro_panR = audio_inR;                                           \

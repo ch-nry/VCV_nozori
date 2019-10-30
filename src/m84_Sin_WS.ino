@@ -36,7 +36,7 @@ inline void SIN_WS_init_() {
 
 inline void SIN_WS_loop_() {
   int32_t tmpS;
-  uint32_t toggle, macro_tmp;
+  uint32_t toggle;
   int32_t freq;
 
   filter16_nozori_84

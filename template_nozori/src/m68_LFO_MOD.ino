@@ -176,11 +176,9 @@ inline void LFO_MOD_loop_() {
 }
 
 inline void LFO_MOD_audio_() {
-  uint32_t tmp, phase, tmp2, current_tick1, increment1;
+  uint32_t tmp, phase, current_tick1, increment1;
   int32_t tmpS, tmpS2;
-  uint32_t symetrie, toggle;
-  int32_t freq;
-  uint32_t freq_MSB, freq_LSB;
+  uint32_t symetrie;
 
   // syncro
   nb_tick1++;

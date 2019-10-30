@@ -88,8 +88,7 @@ inline void VCO_Param_loop_() {
 
 inline void VCO_Param_audio_() {
   int32_t tmp, tmp1, tmp2, tmp4;
-  int32_t tmpS;
-  uint32_t VCO1_increment, VCO1_WS, VCO1_PWM, VCO1_offset, VCO1_gain, VCO1_BLsize;
+  uint32_t VCO1_WS, VCO1_PWM, VCO1_offset, VCO1_gain, VCO1_BLsize;
   uint32_t VCO2_BLsize;
   uint32_t increment1;
   uint32_t pot5_tmp, pot3_tmp; 

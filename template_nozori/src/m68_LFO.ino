@@ -55,7 +55,7 @@ inline void LFO_Dual_init_() {
 }
 
 inline void LFO_Dual_loop_() {
-  int32_t freq, tmpS;
+  int32_t freq;
   uint32_t tmp, tmp2;
   uint32_t tmp_symetrie, tmp_distortion, tmp_distortion2, tmp_gain, tmp_offset_gain;
   int32_t  tmp_offset_signed;
@@ -226,11 +226,9 @@ inline void LFO_Dual_loop_() {
 }
 
 inline void LFO_Dual_audio_() {
-  uint32_t tmp, phase, tmp2, current_tick1, current_tick2, increment1;
+  uint32_t tmp, phase, current_tick1, current_tick2, increment1;
   int32_t tmpS, tmpS2;
-  uint32_t symetrie, toggle;
-  int32_t freq;
-  uint32_t freq_MSB, freq_LSB;
+  uint32_t symetrie;
 
   // syncro 1
   nb_tick1++;

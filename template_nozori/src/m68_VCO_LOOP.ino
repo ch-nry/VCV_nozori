@@ -51,7 +51,7 @@ inline void VCO_LOOP_init_() {
 
 inline void VCO_LOOP_loop_() {
   int32_t tmpS, CV3_value, CV4_value;
-  uint32_t i, tmp, toggle;
+  uint32_t tmp, toggle;
   int32_t chaosX, chaosY, chaosZ;
   int32_t chaosdX, chaosdY, chaosdZ;
   uint32_t variation_speed;
@@ -120,8 +120,7 @@ inline void VCO_LOOP_loop_() {
 }
 
 inline void VCO_LOOP_audio_() {
-  uint32_t current_tick, increment1;
-  uint32_t current_step, tmp,tmp2,  outX, outY, toggle;
+  uint32_t current_step, outX, outY, toggle;
   int32_t tmpS;
   uint32_t pos, interpol;
   uint32_t out, out2;

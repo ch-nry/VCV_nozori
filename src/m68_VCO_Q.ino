@@ -112,10 +112,10 @@ inline void VCO_Q_loop_() {
 }
 
 inline void VCO_Q_audio_() {
-  uint32_t tmp, tmp1, tmp2, tmp4;
+  uint32_t tmp1, tmp2;
   int32_t tmpS, tmpS2;
-  uint32_t VCO1_WS, VCO1_PWM, VCO1_offset, VCO1_gain, VCO1_BLsize, PWM_tmp;
-  int32_t pot5_tmp, pot3_tmp; 
+  uint32_t VCO1_PWM, VCO1_BLsize, PWM_tmp;
+  int32_t pot5_tmp; 
   uint32_t out, out2;
   uint32_t increment1;
   uint32_t phase_local;

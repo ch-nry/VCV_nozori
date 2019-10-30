@@ -45,9 +45,9 @@ inline void THOMAS_init_() {
 }
 
 inline void THOMAS_loop_() {
-  uint32_t toggle, tmp, macro_tmp;
-  int32_t dx, dy, dz, tmpS;
-  int32_t CV1_value, CV2_value, pot1_tmp, pot5_tmp;
+  uint32_t toggle;
+  int32_t tmpS;
+  int32_t pot1_tmp, pot5_tmp;
   int32_t freq;
   
   filter16_nozori_84

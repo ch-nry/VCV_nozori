@@ -40,7 +40,7 @@ inline void VCO_Harmo_init_() {
 }
 
 inline void VCO_Harmo_loop_() {
-  int32_t tmpS, macro_tmp;
+  int32_t tmpS;
 
   filter16_nozori_84
   test_connect_loop_84();
@@ -56,7 +56,6 @@ inline void VCO_Harmo_loop_() {
 }
 
 inline void VCO_Harmo_audio_() {
-  uint32_t tmp, tmp2;
   int32_t tmpS;
   int32_t outS, outS2;
   uint32_t out, out2;

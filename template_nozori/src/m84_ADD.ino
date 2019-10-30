@@ -44,7 +44,6 @@ inline void VCO_Add_init_() {
 
 inline void VCO_Add_loop_() {
   int32_t tmpS;
-  uint32_t macro_tmp;
   
   filter16_nozori_84
   test_connect_loop_84();
@@ -88,7 +87,7 @@ inline void VCO_Add_loop_() {
 }
 
 inline void VCO_Add_audio_() {
-  int32_t outS, tmpS, macro_tmp, outS2;
+  int32_t outS, tmpS, outS2;
   uint32_t out, out2;
 
   // Oscillateur principal

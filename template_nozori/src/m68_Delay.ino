@@ -99,7 +99,7 @@ inline void Delay_loop_() {
 }
 
 inline void Delay_audio_() {
-  int32_t audio_in, out, tmpS;
+  int32_t audio_in, out;
   int32_t audio_out, delay_out, out1, out2;
   uint32_t delay_time, FB, gain, delay_time_LSB, read_point, toggle;
 

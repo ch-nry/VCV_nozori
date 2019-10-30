@@ -45,9 +45,8 @@ inline void noise_init_() {
 }
 
 inline void noise_loop_() {
-  int32_t CV1_value, CV2_value, CV3_value, CV4_value;
+  int32_t CV3_value, CV4_value;
   int32_t tmpS, pot3_tmp, pot5_tmp;
-  uint32_t tmp;
   int32_t freq;
   
   filter16_nozori_68  
@@ -121,7 +120,7 @@ inline void noise_loop_() {
 }
 
 inline void noise_audio_() {
-  int32_t tmpS, tmpS2;
+  int32_t tmpS;
   int32_t out, out2;
 
   if (CV1_connect < 60) {

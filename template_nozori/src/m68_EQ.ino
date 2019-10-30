@@ -48,7 +48,7 @@ inline void EQ_init_() {
 }
 
 inline void EQ_loop_() {
-  int32_t CV1_value, CV2_value, CV3_value, CV4_value;
+  int32_t CV2_value, CV3_value, CV4_value;
   int32_t tmpS, pot1_tmp, pot3_tmp, pot5_tmp;
   uint32_t tmp;
 
@@ -103,7 +103,6 @@ inline void EQ_loop_() {
 
 inline void EQ_audio_() {
   int32_t tmpS, inL, inR, in;
-  int32_t noiseL;
   uint32_t out, out2;
   int32_t outS, out2S;
   int32_t low, medium, high;

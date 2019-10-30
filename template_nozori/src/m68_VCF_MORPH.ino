@@ -52,7 +52,6 @@ inline void VCF_Param_init_() {
 }
 
 inline void VCF_Param_loop_() {
-  uint32_t tmp, tmp2;
   int32_t tmpS;
   int32_t freq2, fader, fader2, faderA, faderB, faderC, faderD;
   int32_t reso_local, reso2_local;

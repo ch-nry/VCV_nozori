@@ -49,11 +49,10 @@ inline void VCF_Param84_init_() {
 }
 
 inline void VCF_Param84_loop_() {
-  uint32_t tmp, tmp2, toggle, mod1, mod2, tmp_interpol1, tmp_interpol2, sel_input_local;
+  uint32_t toggle, sel_input_local;
   int32_t tmpS, freq, IN2;
   int32_t fader,faderA, faderB, faderC, faderD;
   int32_t G1_tmp, G2_tmp, G3_tmp, G5_tmp;
-  int32_t reso_local;
 
   filter16_nozori_84
   //test_connect_loop_84();
@@ -178,7 +177,7 @@ inline void VCF_Param84_loop_() {
 }
 
 inline void VCF_Param84_audio_() {
-  int32_t in, inL, out, tmp, tmp1, VCF_out, freq;
+  int32_t in, inL, tmp, tmp1, VCF_out, freq;
   uint32_t sel_input_local;
 
   sel_input_local = sel_input;

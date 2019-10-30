@@ -48,7 +48,7 @@ inline void AR_init_() {
 }
 
 inline void AR_loop_() {
-  uint32_t tmp, tmp2, toggle, sustain;
+  uint32_t tmp, toggle;
   bool GATE1_local, GATE2_local;
   uint32_t ADSR1_status_local, ADSR1_goal_local;
   uint32_t ADSR2_status_local, ADSR2_goal_local;
@@ -219,7 +219,6 @@ inline void AR_loop_() {
 
 inline void AR_audio_() { 
   uint32_t ADSR1_out_tmp, ADSR2_out_tmp;
-  int32_t tmpS;
   
   ADSR1_out_tmp = ADSR1_out;
   ADSR1_out_tmp += m_s32xs32_s32H(((int32_t)ADSR1_goal - (int32_t)(ADSR1_out_tmp)), ADSR1_filter); 

@@ -65,7 +65,7 @@ inline void FM_loop_() {
 }
     
 inline void FM_audio_() {
-  int32_t outS, tmpS, modulation1, modulation2, freq;
+  int32_t tmpS, modulation1, freq;
   uint32_t out, out2;
   uint32_t freq_MSB, freq_LSB;
   uint32_t increment1, increment2;

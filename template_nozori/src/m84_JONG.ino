@@ -46,7 +46,7 @@ inline void DEJONG_AUDIO_init_() {
 
 inline void DEJONG_base_loop_(uint32_t offset) {
   int32_t tmpS, pot3_tmp, CV2_value;
-  uint32_t toggle, macro_tmp;
+  uint32_t toggle;
   int32_t freq;
 
   filter16_nozori_84
@@ -85,7 +85,7 @@ inline void DEJONG_LFO_loop_() {
   //DEJONG_base_loop_(0x02000000);
 
   int32_t tmpS, pot3_tmp, CV1_value, CV2_value;
-  uint32_t toggle, macro_tmp;
+  uint32_t toggle;
   int32_t freq;
 
   filter16_nozori_84
@@ -136,7 +136,6 @@ inline void DEJONG_AUDIO_loop_() {
 inline void DEJONG_LFO_audio_() {
   int32_t A, B, C, D, tmpS, outXS, outYS;
   uint32_t toggle, tmp2;
-  uint32_t outX, outY;
   toggle = toggle_global;
   
   sin1_phase += increment_1;

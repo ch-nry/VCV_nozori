@@ -51,7 +51,7 @@ inline void LFO_Mod_init_() {
 
 
 inline void LFO_Mod_loop_() {
-  int32_t freq, tmpS;
+  int32_t freq;
   uint32_t tmp, tmp2;
   uint32_t tmp_symetrie, tmp_distortion, tmp_distortion2, tmp_gain, tmp_offset_gain;
   int32_t  tmp_offset_signed;

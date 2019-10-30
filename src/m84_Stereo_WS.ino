@@ -38,7 +38,7 @@ inline void Stereo_WS_init_() {
 }
 
 inline void Stereo_WS_loop_() {
-  uint32_t toggle, tmp, tmp1, tmp2, tmp3, tmp4;
+  uint32_t toggle, tmp1, tmp2;
   
   filter16_nozori_84
   test_connect_loop_84();
@@ -62,7 +62,7 @@ inline void Stereo_WS_audio_() {
   int32_t A, B, C, D;
   int32_t potA, potB, potC, potD;
   int32_t sin1, sin2;
-  uint32_t toggle, tmp, LFO;
+  uint32_t toggle;
   int32_t tmpS;
   int32_t sin3, outXS, outYS;
   uint32_t curve_exp_local, curve_log_local, curve_exp2_local, curve_log2_local;

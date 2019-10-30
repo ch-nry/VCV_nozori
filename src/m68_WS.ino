@@ -145,7 +145,7 @@ inline void WS_loop_() {
 
 inline void WS_audio_() {
   int32_t disto1_local, disto2_local, dry1_local, dry2_local, shape1_local, shape2_local;
-  uint32_t tmp, out, in, ws;
+  uint32_t out, ws;
   int32_t tmpS, tmpS2, tmpS3;
   uint32_t DISTO_gain, DISTO_gain2;
   int32_t DISTO_in;

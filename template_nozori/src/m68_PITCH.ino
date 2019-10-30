@@ -45,10 +45,9 @@ inline void PShift_init_() {
 }
 
 inline void PShift_loop_() { 
-  int32_t offset_local1, offset_local2, speed_local, speed_local2, size_local, save_speed_local;
+  int32_t offset_local1, offset_local2, speed_local, speed_local2, size_local;
   int32_t tmpS, CV1_value, CV2_value, CV3_value, CV4_value;
   uint32_t freq;
-  uint32_t offset_min, offset_max;
   uint32_t toggle, delay_line_size;
   
   filter16_nozori_68
@@ -228,8 +227,7 @@ inline void PShift_loop_() {
 
 inline void PShift_audio_() {
   int32_t tmpS, inL;
-  uint32_t tmp, pos_relative_LSB, pos_relative_MSB, pos_lecture;
-  uint32_t index_lecture;
+  uint32_t pos_relative_MSB;
   uint32_t delay_time_LSB, delay_time_MSB, read_point, out, envelope, envelope1, envelope2;
   int32_t  out1, out2, outS;
   uint32_t toggle, delay_line_size;

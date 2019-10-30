@@ -49,7 +49,7 @@ inline void ADSR_VCA_init_() {
 }
 
 inline void ADSR_VCA_loop_() {
-  uint32_t tmp, tmp2, toggle, sustain;
+  uint32_t tmp, toggle, sustain;
   bool GATE1_local, GATE2_local;
   uint32_t ADSR1_status_local, ADSR1_goal_local;
   uint32_t ADSR2_status_local, ADSR2_goal_local;
