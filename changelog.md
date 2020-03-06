@@ -1,3 +1,4 @@
+1.1.3 : add tag, descrition and a link to modulargrid for all modules
 1.1.2 : add "tropical additive synthesys" module
         cosmetic change
         remove few warning
