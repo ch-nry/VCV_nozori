@@ -17,7 +17,7 @@
       "slug": "Nozori_68_ADSR",
       "name": "Nozori_68_ADSR",
       "description": "Dual loopable ADSR with modulation speed and integrated VCA",
-      "tags": ["Hardware clone", "Envelope generator", "Dual", "Low frequency oscillator"],
+      "tags": ["Hardware clone", "Envelope generator", "Dual", "LFO"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-68"
     }
     ,
@@ -80,16 +80,16 @@
     {
       "slug": "Nozori_68_LFO",
       "name": "Nozori_68_LFO",
-      "description": "Dual Low Frequency Oscillator, with parametric waveform and syncronisation to any signal",
-      "tags": ["Hardware clone", "Dual", "Function generator", "Low frequency oscillator", "Sample and hold"],
+      "description": "Dual LFO, with parametric waveform and syncronisation to any signal",
+      "tags": ["Hardware clone", "Dual", "Function generator", "LFO", "Sample and hold"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-68"
     }
     ,
     {
       "slug": "Nozori_68_LFO_MOD",
       "name": "Nozori_68_LFO_MOD",
-      "description": "Low Frequency Oscillator, with parametric waveform and syncronisation to any signal",
-      "tags": ["Hardware clone", "Dual", "Function generator", "Low frequency oscillator", "Sample and hold"],
+      "description": "LFO, with parametric waveform and syncronisation to any signal",
+      "tags": ["Hardware clone", "Dual", "Function generator", "LFO", "Sample and hold"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-68"
     }
     ,
@@ -113,7 +113,7 @@
       "slug": "Nozori_68_RND_LOOP",
       "name": "Nozori_68_RND_LOOP",
       "description": "Loop of Random Value, with various interpolation and external synchronisation",
-      "tags": ["Hardware clone", "Dual", "Function generator", "Low frequency oscillator", "Random"],
+      "tags": ["Hardware clone", "Dual", "Function generator", "LFO", "Random"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-68"
     }
     ,
@@ -217,7 +217,7 @@
       "slug": "Nozori_84_ADSR",
       "name": "Nozori_84_ADSR",
       "description": "Dual ADSR with loop mode",
-      "tags": ["Hardware clone", "Dual", "Envelope generator", "Low frequency oscillator"],
+      "tags": ["Hardware clone", "Dual", "Envelope generator", "LFO"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
@@ -225,7 +225,7 @@
       "slug": "Nozori_84_CLOCK",
       "name": "Nozori_84_CLOCK",
       "description": "Stochastic Clock with ADSR and VCA",
-      "tags": ["Hardware clone", "Clock generator", "Envelope generator", "Low frequency oscillator"],
+      "tags": ["Hardware clone", "Clock generator", "Envelope generator", "LFO"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
@@ -265,7 +265,7 @@
       "slug": "Nozori_84_JONG_LFO",
       "name": "Nozori_84_JONG_LFO",
       "description": "Peter de Jong chaotic attractor",
-      "tags": ["Hardware clone", "Function generator", "Low frequency oscillator"],
+      "tags": ["Hardware clone", "Function generator", "LFO"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
@@ -281,7 +281,7 @@
       "slug": "Nozori_84_LFO",
       "name": "Nozori_84_LFO",
       "description": "Dual LFO",
-      "tags": ["Hardware clone", "Dual", "Function generator", "Low frequency oscillator", "Sample and hold"],
+      "tags": ["Hardware clone", "Dual", "Function generator", "LFO", "Sample and hold"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
@@ -289,7 +289,7 @@
       "slug": "Nozori_84_LFO_SEQ",
       "name": "Nozori_84_LFO_SEQ",
       "description": "6 step LFO / Sequencer",
-      "tags": ["Hardware clone", "Function generator", "Low frequency oscillator", "Sequencer"],
+      "tags": ["Hardware clone", "Function generator", "LFO", "Sequencer"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
@@ -297,7 +297,7 @@
       "slug": "Nozori_84_MODULATE",
       "name": "Nozori_84_MODULATE",
       "description": "Modulate 2 audio sources together using various algorithms",
-      "tags": ["Hardware clone", "Digital", "Effect", "Ring Modulation"],
+      "tags": ["Hardware clone", "Digital", "Effect", "Ring modulator"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
@@ -361,7 +361,7 @@
       "slug": "Nozori_84_THOMAS",
       "name": "Nozori_84_THOMAS",
       "description": "Dual Thomas strange attractor for CV or audio noise source",
-      "tags": ["Hardware clone", "Digital", "Low frequency oscillator", "Oscillator"],
+      "tags": ["Hardware clone", "Digital", "LFO", "Oscillator"],
       "modularGridUrl": "https://www.modulargrid.net/e/nozoid-nozori-84"
     }
     ,
