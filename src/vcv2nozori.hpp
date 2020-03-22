@@ -81,12 +81,13 @@ const uint32_t CV2_1V = (48<<18) / CV2_1Vminus0V;
 const uint32_t CV3_1V = (48<<18) / CV3_1Vminus0V;
 const uint32_t CV4_1V = (48<<18) / CV4_1Vminus0V;
 
-const int32_t IN1_0V = 1<<31; // valeur moyenne qd il n'y a pas de calibration valable
-const int32_t IN1_1V_value = (0xFFFFFF00/14); // idem
+const uint32_t IN1_0V = 2147483648; // valeur moyenne qd il n'y a pas de calibration valable
+const int32_t IN1_1V_value = 322122547; // idem
 const int32_t IN1_1V = (48<<18) / (IN1_1V_value>>16); //avec un CV sur 16 bit seulement :  pitch = ((audio_inL-(1<<31)>>16)*IN1_1V)
+// IN1_1V = 2560
 
-const int32_t IN2_0V = 1<<31; // valeur moyenne qd il n'y a pas de calibration valable
-const int32_t IN2_1V_value = (0xFFFFFF00/14); // idem
+const uint32_t IN2_0V = 2147483648; // valeur moyenne qd il n'y a pas de calibration valable
+const int32_t IN2_1V_value = 322122547; // idem
 const int32_t IN2_1V = (48<<18) / (IN2_1V_value>>16); //avec un CV sur 16 bit seulement :  pitch = ((audio_inL-(1<<31)>>16)*IN1_1V)
 
 // TODO
