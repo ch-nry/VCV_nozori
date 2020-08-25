@@ -91,34 +91,34 @@ struct Nozori_all : Module {
 */
 	void process(const ProcessArgs& args) override {
         float warning_48, warning_96;
-        if (args.sampleRate==SR_needed) { 
-            warning_48 = 1.; 
-            warning_96 = 1.; 
-        }
-        else { 
-            if (SR_needed == 96000.) { 
-            warning_48 = 1.; 
-            warning_96 = 0.; 
-            } 
-            else { 
-            warning_48 = 0.; 
-            warning_96 = 1.; 
-            } 
-        }
-
-        if (warning_48 != old_warning_48) { 
-            old_warning_48 = warning_48;
-            this->lights[TEXT_LIGHT_48].setBrightness(warning_48); 
-        }
-        if (warning_96 != old_warning_96) { 
-            old_warning_96 = warning_96;
-            this->lights[TEXT_LIGHT_96].setBrightness(warning_96); 
-        }
         audio_inL = (uint32_t)((clamp(inputs[IN1_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
         audio_inR = (uint32_t)((clamp(inputs[IN2_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
         reduce_data_speed_index = (reduce_data_speed_index+1)%4;
         if (reduce_data_speed_index == 0) {
             module_function_loop_(); // process data loop only at 1/4 the sampling rate in order to be more accurate with the hardware timing
+            if (args.sampleRate==SR_needed) { 
+                warning_48 = 1.; 
+                warning_96 = 1.; 
+            }
+            else { 
+                if (SR_needed == 96000.) { 
+                warning_48 = 1.; 
+                warning_96 = 0.; 
+                } 
+                else { 
+                warning_48 = 0.; 
+                warning_96 = 1.; 
+                } 
+            }
+
+            if (warning_48 != old_warning_48) { 
+                old_warning_48 = warning_48;
+                this->lights[TEXT_LIGHT_48].setBrightness(warning_48); 
+            }
+            if (warning_96 != old_warning_96) { 
+                old_warning_96 = warning_96;
+                this->lights[TEXT_LIGHT_96].setBrightness(warning_96); 
+            }
         }
         module_function_audio_();
         outputs[OUT1_OUTPUT].setVoltage( ((float)audio_outL - 2147483648.)/322122547.2 );
