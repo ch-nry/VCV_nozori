@@ -120,14 +120,12 @@ struct warningText_48 : BASE {
 	void drawLight(const widget::Widget::DrawArgs& args) override {
 		nvgBeginPath(args.vg);
 		if (this->color.a != 1.) { // invert since we don't want this warning to be displayed on the module selection menu
-		    nvgRect(args.vg, 0, 0, this->box.size.x, this->box.size.y);
+		    nvgRect(args.vg,0,  mm2px(123), this->box.size.x, mm2px(5.5));
 		    nvgFillColor(args.vg, nvgRGBA(0x00,0x00,0x00,0x80));
 			nvgFill(args.vg);
 		    nvgFillColor(args.vg, nvgRGB(0xff,0xff,0xff));
-    		nvgFontSize(args.vg, 25);
-			nvgText(args.vg, mm2px(8), mm2px(43), "This module", NULL);
-            nvgText(args.vg, mm2px(5), mm2px(66), "need a 48KHz", NULL); 
-			nvgText(args.vg, mm2px(4), mm2px(88), "Sampling Rate", NULL);
+    		nvgFontSize(args.vg, 10);
+			nvgText(args.vg, mm2px(0.5), mm2px(127), "This module need a 48KHz Sampling Rate", NULL);
 		}
 	}
 };
@@ -141,14 +139,12 @@ struct warningText_96 : BASE {
 	void drawLight(const widget::Widget::DrawArgs& args) override {
 		nvgBeginPath(args.vg);
 		if (this->color.a != 1.) { // invert since we don't want this warning to be displayed on the module selection menu
-		    nvgRect(args.vg, 0, 0, this->box.size.x, this->box.size.y);
+		    nvgRect(args.vg,0,  mm2px(123), this->box.size.x, mm2px(5.5));
 		    nvgFillColor(args.vg, nvgRGBA(0x00,0x00,0x00,0x80));
 			nvgFill(args.vg);
 		    nvgFillColor(args.vg, nvgRGB(0xff,0xff,0xff));
-    		nvgFontSize(args.vg, 25);
-			nvgText(args.vg, mm2px(8), mm2px(43), "This module", NULL);
-            nvgText(args.vg, mm2px(5), mm2px(66), "need a 96KHz", NULL); 
-			nvgText(args.vg, mm2px(4), mm2px(88), "Sampling Rate", NULL);
+    		nvgFontSize(args.vg, 10);
+			nvgText(args.vg, mm2px(0.), mm2px(127), "This module need a 96KHz Sampling Rate", NULL);
 		}
 	}
 };
