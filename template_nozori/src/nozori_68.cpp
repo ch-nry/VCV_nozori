@@ -69,6 +69,7 @@ struct Nozori_all : Module {
     #include "a_utils.h"
     #include "module_src_file.ino"
     float old_warning_48, old_warning_96;
+    int reduce_data_speed_index;
 
     void onAdd() override {
         SR_needed = 96000.;
@@ -117,7 +118,10 @@ struct Nozori_all : Module {
         }
         audio_inL = (uint32_t)((clamp(inputs[IN1_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
         audio_inR = (uint32_t)((clamp(inputs[IN2_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
-        module_function_loop_();
+        reduce_data_speed_index = (reduce_data_speed_index+1)%4;
+        if (reduce_data_speed_index == 0) {
+            module_function_loop_(); // process data loop only at 1/4 the sampling rate in order to be more accurate with the hardware timing
+        }
         module_function_audio_();
         outputs[OUT1_OUTPUT].setVoltage( ((float)audio_outL - 2147483648.)/322122547.2 );
         outputs[OUT2_OUTPUT].setVoltage( ((float)audio_outR - 2147483648.)/322122547.2 ); 
