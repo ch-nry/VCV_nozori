@@ -68,11 +68,16 @@ struct Nozori_all : Module {
     #include "c_fonctions.h"
     #include "a_utils.h"
     #include "module_src_file.ino"
+    float old_warning_48, old_warning_96;
 
     void onAdd() override {
         SR_needed = 96000.;
         init_random();
         module_function_init_();
+        old_warning_48 = 1;
+        old_warning_96 = 1;
+        this->lights[TEXT_LIGHT_48].setBrightness(1.); 
+        this->lights[TEXT_LIGHT_96].setBrightness(1.); 
     }
 
     void onReset() override {
@@ -84,19 +89,29 @@ struct Nozori_all : Module {
     }
 */
 	void process(const ProcessArgs& args) override {
+        float warning_48, warning_96;
         if (args.sampleRate==SR_needed) { 
-            this->lights[TEXT_LIGHT_48].setBrightness(1.); 
-            this->lights[TEXT_LIGHT_96].setBrightness(1.); 
+            warning_48 = 1.; 
+            warning_96 = 1.; 
         }
         else { 
             if (SR_needed == 96000.) { 
-            this->lights[TEXT_LIGHT_48].setBrightness(1.); 
-            this->lights[TEXT_LIGHT_96].setBrightness(0.); 
+            warning_48 = 1.; 
+            warning_96 = 0.; 
             } 
             else { 
-            this->lights[TEXT_LIGHT_48].setBrightness(0.); 
-            this->lights[TEXT_LIGHT_96].setBrightness(1.); 
+            warning_48 = 0.; 
+            warning_96 = 1.; 
             } 
+        }
+
+        if (warning_48 != old_warning_48) { 
+            old_warning_48 = warning_48;
+            this->lights[TEXT_LIGHT_48].setBrightness(warning_48); 
+        }
+        if (warning_96 != old_warning_96) { 
+            old_warning_96 = warning_96;
+            this->lights[TEXT_LIGHT_96].setBrightness(warning_96); 
         }
         audio_inL = (uint32_t)((clamp(inputs[IN1_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
         audio_inR = (uint32_t)((clamp(inputs[IN2_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
