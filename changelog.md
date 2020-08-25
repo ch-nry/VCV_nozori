@@ -1,3 +1,5 @@
+1.1.6 : optimisation
+        change the SR warning : since it did not fade away for catalina user, I make it less anoying
 1.1.5 : debug pitch module
 1.1.4 : debug 1V/Oct input for all nozori 84 modules
 1.1.3 : add tag, descrition and a link to modulargrid for all modules
