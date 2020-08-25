@@ -68,42 +68,60 @@ struct Nozori_68_RND_LOOP : Module {
     #include "c_fonctions.h"
     #include "a_utils.h"
     #include "m68_RND_LOOP.ino"
-    float time_since_startup;
+    float old_warning_48, old_warning_96;
+    int reduce_data_speed_index;
 
     void onAdd() override {
         SR_needed = 96000.;
         init_random();
         RND_LOOP_init_();
-        time_since_startup = 0.;
+        old_warning_48 = 1;
+        old_warning_96 = 1;
+        this->lights[TEXT_LIGHT_48].setBrightness(1.); 
+        this->lights[TEXT_LIGHT_96].setBrightness(1.); 
     }
 
     void onReset() override {
         onAdd();
     }
 
+/*
     void onSampleRateChange() override {
         time_since_startup = 0.;
     }
-
+*/
 	void process(const ProcessArgs& args) override {
-        time_since_startup += 1/args.sampleRate;
-        if ((args.sampleRate==SR_needed) || (time_since_startup > 5.)) { 
-            this->lights[TEXT_LIGHT_48].setBrightness(1.); 
-            this->lights[TEXT_LIGHT_96].setBrightness(1.); 
-        }
-        else { 
-            if (SR_needed == 96000.) { 
-            this->lights[TEXT_LIGHT_48].setBrightness(1.); 
-            this->lights[TEXT_LIGHT_96].setBrightness(0.); 
-            } 
-            else { 
-            this->lights[TEXT_LIGHT_48].setBrightness(0.); 
-            this->lights[TEXT_LIGHT_96].setBrightness(1.); 
-            } 
-        }
+//        time_since_startup += 1/args.sampleRate;
+        float warning_48, warning_96;
         audio_inL = (uint32_t)((clamp(inputs[IN1_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
         audio_inR = (uint32_t)((clamp(inputs[IN2_INPUT].getVoltage(), -6.24, 6.24)*322122547.2) + 2147483648.);
-        RND_LOOP_loop_();
+        reduce_data_speed_index = (reduce_data_speed_index+1)%4;
+        if (reduce_data_speed_index == 0) {
+            RND_LOOP_loop_(); // process data loop only at 1/4 the sampling rate in order to be more accurate with the hardware timing
+            if (args.sampleRate==SR_needed) { 
+                warning_48 = 1.; 
+                warning_96 = 1.; 
+            }
+            else { 
+                if (SR_needed == 96000.) { 
+                warning_48 = 1.; 
+                warning_96 = 0.; 
+                } 
+                else { 
+                warning_48 = 0.; 
+                warning_96 = 1.; 
+                } 
+            }
+
+            if (warning_48 != old_warning_48) { 
+                old_warning_48 = warning_48;
+                this->lights[TEXT_LIGHT_48].setBrightness(warning_48); 
+            }
+            if (warning_96 != old_warning_96) { 
+                old_warning_96 = warning_96;
+                this->lights[TEXT_LIGHT_96].setBrightness(warning_96); 
+            }
+        }
         RND_LOOP_audio_();
         outputs[OUT1_OUTPUT].setVoltage( ((float)audio_outL - 2147483648.)/322122547.2 );
         outputs[OUT2_OUTPUT].setVoltage( ((float)audio_outR - 2147483648.)/322122547.2 ); 
@@ -120,14 +138,12 @@ struct warningText_48 : BASE {
 	void drawLight(const widget::Widget::DrawArgs& args) override {
 		nvgBeginPath(args.vg);
 		if (this->color.a != 1.) { // invert since we don't want this warning to be displayed on the module selection menu
-		    nvgRect(args.vg, 0, 0, this->box.size.x, this->box.size.y);
+		    nvgRect(args.vg,0,  mm2px(123), this->box.size.x, mm2px(5.5));
 		    nvgFillColor(args.vg, nvgRGBA(0x00,0x00,0x00,0x80));
 			nvgFill(args.vg);
 		    nvgFillColor(args.vg, nvgRGB(0xff,0xff,0xff));
-    		nvgFontSize(args.vg, 25);
-			nvgText(args.vg, mm2px(8), mm2px(43), "This module", NULL);
-            nvgText(args.vg, mm2px(5), mm2px(66), "need a 48KHz", NULL); 
-			nvgText(args.vg, mm2px(4), mm2px(88), "Sampling Rate", NULL);
+    		nvgFontSize(args.vg, 10);
+			nvgText(args.vg, mm2px(0.5), mm2px(127), "This module need a 48KHz Sampling Rate", NULL);
 		}
 	}
 };
@@ -141,14 +157,12 @@ struct warningText_96 : BASE {
 	void drawLight(const widget::Widget::DrawArgs& args) override {
 		nvgBeginPath(args.vg);
 		if (this->color.a != 1.) { // invert since we don't want this warning to be displayed on the module selection menu
-		    nvgRect(args.vg, 0, 0, this->box.size.x, this->box.size.y);
+		    nvgRect(args.vg,0,  mm2px(123), this->box.size.x, mm2px(5.5));
 		    nvgFillColor(args.vg, nvgRGBA(0x00,0x00,0x00,0x80));
 			nvgFill(args.vg);
 		    nvgFillColor(args.vg, nvgRGB(0xff,0xff,0xff));
-    		nvgFontSize(args.vg, 25);
-			nvgText(args.vg, mm2px(8), mm2px(43), "This module", NULL);
-            nvgText(args.vg, mm2px(5), mm2px(66), "need a 96KHz", NULL); 
-			nvgText(args.vg, mm2px(4), mm2px(88), "Sampling Rate", NULL);
+    		nvgFontSize(args.vg, 10);
+			nvgText(args.vg, mm2px(0.), mm2px(127), "This module need a 96KHz Sampling Rate", NULL);
 		}
 	}
 };
