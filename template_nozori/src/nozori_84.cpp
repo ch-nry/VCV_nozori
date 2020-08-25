@@ -68,26 +68,23 @@ struct Nozori_all : Module {
     #include "c_fonctions.h"
     #include "a_utils.h"
     #include "module_src_file.ino"
-    float time_since_startup;
 
     void onAdd() override {
         SR_needed = 96000.;
         init_random();
         module_function_init_();
-        time_since_startup = 0.;
     }
 
     void onReset() override {
         onAdd();
     }
 
-    void onSampleRateChange() override {
+/*    void onSampleRateChange() override {
         time_since_startup = 0.;
     }
-
+*/
 	void process(const ProcessArgs& args) override {
-        time_since_startup += 1/args.sampleRate;
-        if ((args.sampleRate==SR_needed) || (time_since_startup > 5.)) { 
+        if (args.sampleRate==SR_needed) { 
             this->lights[TEXT_LIGHT_48].setBrightness(1.); 
             this->lights[TEXT_LIGHT_96].setBrightness(1.); 
         }
