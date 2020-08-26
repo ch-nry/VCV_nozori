@@ -74,8 +74,8 @@ struct Nozori_84_SEQ_4 : Module {
         SR_needed = 96000.;
         init_random();
         SEQ4_init_();
-        lights[TEXT_LIGHT_48].setBrightness(1.); 
-        lights[TEXT_LIGHT_96].setBrightness(1.); 
+        lights[TEXT_LIGHT_48].setBrightness(1.f); 
+        lights[TEXT_LIGHT_96].setBrightness(1.f); 
     }
 
     void onReset() override {

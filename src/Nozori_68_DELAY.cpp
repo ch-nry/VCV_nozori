@@ -74,8 +74,8 @@ struct Nozori_68_DELAY : Module {
         SR_needed = 96000.;
         init_random();
         Delay_init_();
-        lights[TEXT_LIGHT_48].setBrightness(0.); 
-        lights[TEXT_LIGHT_96].setBrightness(0.); 
+        lights[TEXT_LIGHT_48].setBrightness(1.f); 
+        lights[TEXT_LIGHT_96].setBrightness(1.f); 
     }
 
     void onReset() override {
