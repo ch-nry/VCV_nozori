@@ -1,3 +1,4 @@
+1.1.7 : fix the Sample rate warning on osX catalina thanks to Joshdavenport
 1.1.6 : optimisation
         change the SR warning : since it did not fade away for catalina user, I make it less anoying
 1.1.5 : debug pitch module
