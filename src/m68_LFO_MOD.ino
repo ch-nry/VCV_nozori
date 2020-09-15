@@ -39,13 +39,11 @@
 #define LFO1_offset2 0x3000000      // offset depend of the switch position
 #define LFO1_offset3 0              // 
 
-uint32_t WF, SYM, LFO_increment;
-uint32_t gain1, gain2, gain3;
-
 inline void LFO_MOD_init_() {
   init_chaos();
   LFO1_phase = 0x00000000;
   last_clock_1 = 0;
+  symetrie_1 = 0x1000000;
 }
 
 inline void LFO_MOD_loop_() {
@@ -120,7 +118,7 @@ inline void LFO_MOD_loop_() {
   //tmp_symetrie = (0xFFFF - CV_filter16_out[index_filter_pot5])<<16; // 32 bits
   tmp_symetrie = (0xFFFF - tmp)<<16; // 32 bits
   tmp_symetrie = min(tmp_symetrie, 0xFFFFFF00);
-  tmp_symetrie = max(tmp_symetrie, 0x000000FF);
+  tmp_symetrie = max(tmp_symetrie, 0x00000100);
 
   // WF : distortion 1, 2 and Gain
   tmpS2 = CV_filter16_out[index_filter_pot3];

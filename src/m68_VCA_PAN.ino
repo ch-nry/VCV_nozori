@@ -38,6 +38,12 @@ volatile int32_t Gain1_save, Gain2_save, Pan1_save, Pan2_save, CVgain1_save, CVg
  
 inline void Pan_init_() {
   init_chaos();
+  Gain1_save = 0;
+  Gain2_save = 0;
+  Pan1_save = 0;
+  Pan2_save = 0;
+  CVgain1_save = 0;
+  CVgain2_save = 0;
 }
 
 inline void Pan_loop_() {

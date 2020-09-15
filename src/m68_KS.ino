@@ -35,8 +35,15 @@
 uint32_t pluck, pluck2, pluck2_save;
 
 inline void KS_init_() {
+  uint32_t i;
   filter_audio_out = 0;
   init_chaos();
+  for (i=0; i<Max_Delay;i++) {
+    delay_line.S16[i] = 0;
+  }
+  pluck2_save = 0;
+  pluck = 0;
+  pluck2 = 0;
 }
 
 inline void KS_loop_() {

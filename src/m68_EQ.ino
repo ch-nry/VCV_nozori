@@ -45,6 +45,23 @@ int32_t inR_filter_low1, inR_filter_low2, inR_filter_low3, inR_filter_low4, inR_
 inline void EQ_init_() {
     init_chaos();
     last_CV1 = 0;
+
+  inL_filter_low1 = 0;
+  inL_filter_low2 = 0;
+  inL_filter_low3 = 0;
+  inL_filter_low4 = 0;
+  inL_filter_high1 = 0;
+  inL_filter_high2 = 0;
+  inL_filter_high3 = 0;
+  inL_filter_high4 = 0;
+  inR_filter_low1 = 0;
+  inR_filter_low2 = 0;
+  inR_filter_low3 = 0;
+  inR_filter_low4 = 0;
+  inR_filter_high1 = 0;
+  inR_filter_high2 = 0;
+  inR_filter_high3 = 0;
+  inR_filter_high4 = 0;
 }
 
 inline void EQ_loop_() {

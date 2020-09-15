@@ -35,6 +35,7 @@
 inline void VCO_init_() {
   VCO1_phase = 0;
   init_chaos();
+  freq_save = 0x1000;
 }
 
 inline void VCO_loop_() {

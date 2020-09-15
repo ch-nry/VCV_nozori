@@ -59,6 +59,15 @@ inline int32_t disto1 (int32_t in) {
 inline void WS_init_() {
   state = 0;
   init_chaos();
+
+  shape1_save = 0;
+  shape2_save = 0;
+  disto1_save = 0;
+  disto2_save = 0;
+  audio1_filter = 0;
+  audio2_filter = 0;
+  last_inL = 0;
+  last_inR = 0;
 }
 
 inline void WS_loop_() {

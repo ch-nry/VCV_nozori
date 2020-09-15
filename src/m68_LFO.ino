@@ -52,6 +52,8 @@ inline void LFO_Dual_init_() {
   LFO2_phase = 0x00000000;
   last_clock_1 = 0;
   last_clock_2 = 0;
+  symetrie_1 = 0x1000000;
+  symetrie_2 = 0x1000000;
 }
 
 inline void LFO_Dual_loop_() {
@@ -100,7 +102,7 @@ inline void LFO_Dual_loop_() {
   // symetry
   tmp_symetrie = (0xFFFF - CV_filter16_out[index_filter_pot5])<<16; // 32 bits
   tmp_symetrie = min(tmp_symetrie, 0xFFFFFF00);
-  tmp_symetrie = max(tmp_symetrie, 0x000000FF);
+  tmp_symetrie = max(tmp_symetrie, 0x00000100);
 
   // WF : distortion 1, 2 and Gain
   tmp = 3*(CV_filter16_out[index_filter_pot3]>>1);
@@ -179,7 +181,7 @@ inline void LFO_Dual_loop_() {
   
   tmp_symetrie = (0xFFFF - CV_filter16_out[index_filter_pot6])<<16; // 32 bits
   tmp_symetrie = min(tmp_symetrie, 0xFFFFFF00);
-  tmp_symetrie = max(tmp_symetrie, 0x000000FF);
+  tmp_symetrie = max(tmp_symetrie, 0x00000100);
   
   // WF : distortion 1, 2 and Gain
   tmp = 3*(CV_filter16_out[index_filter_pot4]>>1);
@@ -223,6 +225,7 @@ inline void LFO_Dual_loop_() {
     LFO2_phase = 0;
   } 
   if (audio_inR < 0xA0000000) reset2 = 0; // hysteresis sur le trigger
+
 }
 
 inline void LFO_Dual_audio_() {
@@ -268,7 +271,7 @@ inline void LFO_Dual_audio_() {
   // calcul de la symetrie
   symetrie = symetrie_1;
   tmp = (phase > (symetrie))? -phase / (-symetrie >> 16): phase / (symetrie >> 16); 
-  
+
   // gain pour passage sin -> square
   tmpS = tmp - (1<<15) + offset_signed_1; // passage en signed
   tmpS *= min((1 << 5) + (gain_1 >> 15), 0x7FFF);

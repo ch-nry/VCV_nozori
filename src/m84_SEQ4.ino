@@ -40,6 +40,15 @@ bool do_interpol;
 inline void SEQ4_init_() {
   last_gate = false;
   clock_div = 1;
+  current_pos = 0;
+  new_clock = false;
+
+  value_out = 0;
+  gate_out = 0;
+  interpol_increment = 0;
+  interpol_A = 0;
+  interpol_B = 0;
+  do_interpol = false;
 }
 
 inline void SEQ4_loop_() {

@@ -38,6 +38,15 @@ inline void DEJONG_LFO_init_() {
   out_oldX1 = random32();
   out_oldY1 = random32();
   init_chaos();
+
+  out_oldX1 = 0;
+  out_oldX2 = 0;
+  out_oldX3 = 0;
+  out_oldX4 = 0;
+  out_oldY1 = 0;
+  out_oldY2 = 0;
+  out_oldY3 = 0;
+  out_oldY4 = 0;
 }
 
 inline void DEJONG_AUDIO_init_() {

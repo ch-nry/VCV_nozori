@@ -42,9 +42,6 @@ inline void PShift_init_() {
   // Switch to 48KHz
   send_dac(0x08,0b000000001); // sampling control (usb , 250fs,  48K, clock div 2, clk out, active)
   init_chaos();
-  start_new_grain = true;
-  grain1_used = false;
-  grain2_used = false;
 }
 
 inline void PShift_loop_() { 

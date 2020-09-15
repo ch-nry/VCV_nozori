@@ -47,6 +47,8 @@ inline void VCO_LOOP_init_() {
   rnd_all_save = 0;
   init_chaos();
   current_step_nb = 1;
+  pos_old = 0;
+  freq_save = 0x1000;
 }
 
 inline void VCO_LOOP_loop_() {

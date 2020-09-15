@@ -34,6 +34,7 @@ uint32_t save_increment;
 
 inline void OSC_Param_init_() {
   VCO1_phase = 0;
+  save_increment = 0;
 }
 
 inline void OSC_Param_loop_() {

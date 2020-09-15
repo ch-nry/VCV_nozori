@@ -76,6 +76,7 @@ struct Nozori_84_SEQ_4 : Module {
         SEQ4_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 
         lights[TEXT_LIGHT_96].setBrightness(1.f); 
+        reduce_data_speed_index = 0;
     }
 
     void onReset() override {

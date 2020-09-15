@@ -47,6 +47,9 @@ inline void LFO_Mod_init_() {
   send_dac(0x08,0b000000001); // sampling control (usb , 250fs,  48K, clock div 2, clk out, active)
   LFO1_phase = 0x00000000;
   LFO2_phase = 0x00000000;
+  symetrie_1 = 0x1000000;
+  symetrie_2 = 0x1000000;
+  clock_diviseur = 1;
 }
 
 
@@ -88,7 +91,7 @@ inline void LFO_Mod_loop_() {
   // symetry
   tmp_symetrie = (0xFFFF - CV_filter16_out[index_filter_pot5])<<16; // 32 bits
   tmp_symetrie = min(tmp_symetrie, 0xFFFFFF00);
-  tmp_symetrie = max(tmp_symetrie, 0x000000FF);
+  tmp_symetrie = max(tmp_symetrie, 0x00000100);
 
   // WF : distortion 1, 2 and Gain
   tmp = 3*(CV_filter16_out[index_filter_pot3]>>1);

@@ -76,6 +76,7 @@ struct Nozori_84_8_BITS : Module {
         VCO_8bit_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 
         lights[TEXT_LIGHT_96].setBrightness(1.f); 
+        reduce_data_speed_index = 0;
     }
 
     void onReset() override {
