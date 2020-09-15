@@ -1,3 +1,5 @@
+1.1.8 : fix initialisation bug
+        This should fix crash when loading some modules
 1.1.7 : fix the Sample rate warning on osX catalina thanks to Joshdavenport
 1.1.6 : optimisation
         change the SR warning : since it did not fade away for catalina user, I make it less anoying
