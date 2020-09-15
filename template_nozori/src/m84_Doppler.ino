@@ -40,6 +40,22 @@ uint32_t low_gainL,low_gainR;
 inline void Doppler_init_() {
   set_led2(0);
   set_led4(0);
+
+  time1_save = 0;
+  time2_save = 0;
+  mod3_save = 0;
+  mod4_save = 0;
+  filter1L_save = 0;
+  filter2L_save = 0;
+  filter1R_save = 0;
+  filter2R_save = 0;
+
+  filter_low_1L = 0;
+  filter_low_2L = 0;
+  filter_low_1R = 0;
+  filter_low_2R = 0;
+  low_gainL = 0;
+  low_gainR = 0;
 }
 
 inline void Doppler_loop_() {

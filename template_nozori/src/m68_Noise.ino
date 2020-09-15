@@ -42,6 +42,21 @@ inline void noise_init_() {
   VCO1_phase = 0;
   init_chaos();
   last_CV1 = 0;
+
+  noiseL = 0;
+  noiseR = 0;
+  noiseL_filter_low = 0;
+  noiseR_filter_low = 0;
+  noiseL_filter_high = 0;
+  noiseR_filter_high = 0;
+  filterL1 = 0;
+  filterL2 = 0;
+  filterL3 = 0;
+  filterL4 = 0;
+  filterR1 = 0;
+  filterR2 = 0;
+  filterR3 = 0;
+  filterR4 = 0;
 }
 
 inline void noise_loop_() {

@@ -33,6 +33,14 @@
 uint32_t gain1_save, gain2_save, gain3_save, gain4_save, gain5_save, gain6_save, gain7_save, gain8_save;
 
 inline void modulation_init_() {
+  gain1_save = 0;
+  gain2_save = 0;
+  gain3_save = 0;
+  gain4_save = 0;
+  gain5_save = 0;
+  gain6_save = 0;
+  gain7_save = 0;
+  gain8_save = 0;
 }
 
 inline void modulation_loop_() {

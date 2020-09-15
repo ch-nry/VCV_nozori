@@ -38,6 +38,8 @@ int32_t pitch_quantized, trigger;
 inline void VCO_Q_init_() {
   VCO1_phase = 0;
   init_chaos();
+  trigger = 0;
+  freq_save = 0x1000;
 }
 
 inline void VCO_Q_loop_() {

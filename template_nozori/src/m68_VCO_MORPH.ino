@@ -40,6 +40,10 @@ uint32_t pot3_save, pot5_save, pot3_data, pot5_data;
 inline void VCO_Param_init_() {
   VCO1_phase = 0;
   init_chaos();
+  pot3_save = 0;
+  pot5_save = 0;
+  freq_save = 0x1000;
+  increment_0 = 0x1000;
 }
 
 inline void VCO_Param_loop_() {

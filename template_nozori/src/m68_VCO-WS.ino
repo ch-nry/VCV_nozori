@@ -37,6 +37,9 @@ int32_t WS_save, PM_save;
 inline void VCO_WS_init_() {
   VCO1_phase = 0;
   init_chaos();
+  WS_save = 0;
+  PM_save = 0;
+  freq_save = 0x1000;
 }
 
 inline void VCO_WS_loop_() {

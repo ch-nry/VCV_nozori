@@ -30,13 +30,17 @@
 // OUT 1 : POS OUT
 // OUT 2 : SEQ OUT
 
-uint32_t pos, glide, clock_time, last_clock_time, last_goal, current_goal, goal;
+uint32_t pos, clock_time, last_clock_time, last_goal, current_goal, goal;
 bool last_clock;
 
 inline void SEQ8_init_() {
   last_clock = false;
   pos = 0;
   last_clock_time = 1;
+  clock_time = 0;
+  last_goal = 0;
+  goal = 0;
+  current_goal = 0;
 }
 
 inline void SEQ8_loop_() {
