@@ -117,8 +117,8 @@ inline void LFO_MOD_loop_() {
   
   //tmp_symetrie = (0xFFFF - CV_filter16_out[index_filter_pot5])<<16; // 32 bits
   tmp_symetrie = (0xFFFF - tmp)<<16; // 32 bits
-  tmp_symetrie = min(tmp_symetrie, 0xFFFFFF00);
-  tmp_symetrie = max(tmp_symetrie, 0x00000100);
+  tmp_symetrie = min(tmp_symetrie, 0xFFFF0000);
+  tmp_symetrie = max(tmp_symetrie, 0x00010000);
 
   // WF : distortion 1, 2 and Gain
   tmpS2 = CV_filter16_out[index_filter_pot3];
