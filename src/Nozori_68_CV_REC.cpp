@@ -77,6 +77,7 @@ struct Nozori_68_CV_REC : Module {
         lights[TEXT_LIGHT_48].setBrightness(1.f); 
         lights[TEXT_LIGHT_96].setBrightness(1.f); 
         reduce_data_speed_index = 0;
+        CV_REC_loop_(); 
     }
 
     void onReset() override {

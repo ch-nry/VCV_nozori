@@ -77,6 +77,7 @@ struct Nozori_84_PARAM : Module {
         lights[TEXT_LIGHT_48].setBrightness(1.f); 
         lights[TEXT_LIGHT_96].setBrightness(1.f); 
         reduce_data_speed_index = 0;
+        OSC_Param_loop_(); 
     }
 
     void onReset() override {

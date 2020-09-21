@@ -39,9 +39,17 @@
 uint32_t delay_line_size_global;
 
 inline void PShift_init_() {
+  uint32_t i;
   // Switch to 48KHz
   send_dac(0x08,0b000000001); // sampling control (usb , 250fs,  48K, clock div 2, clk out, active)
+
+  start_new_grain = false;
+  grain1_used = false;
+  grain2_used = false; 
   init_chaos();
+  for (i=0; i<Max_Delay;i++) {
+    delay_line.S16[i] = 0;
+  }
 }
 
 inline void PShift_loop_() { 
