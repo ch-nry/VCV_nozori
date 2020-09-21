@@ -1,3 +1,5 @@
+1.1.9 : fix more initialisation bug
+        This should fix crash when loading some modules and empty delay line of various modules
 1.1.8 : fix initialisation bug
         This should fix crash when loading some modules
 1.1.7 : fix the Sample rate warning on osX catalina thanks to Joshdavenport
