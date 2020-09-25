@@ -72,6 +72,7 @@ struct Nozori_84_TROPICAL : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         VCO_Tropical_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

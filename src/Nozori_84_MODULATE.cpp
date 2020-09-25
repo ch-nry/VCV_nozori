@@ -72,6 +72,7 @@ struct Nozori_84_MODULATE : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         modulation_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

@@ -72,6 +72,7 @@ struct Nozori_68_VCF_MOD : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         VCF_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

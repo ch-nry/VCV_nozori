@@ -72,6 +72,7 @@ struct Nozori_68_LFO_MOD : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         LFO_MOD_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

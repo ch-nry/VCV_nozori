@@ -38,6 +38,7 @@ int32_t filter_low_1L, filter_low_2L, filter_low_1R, filter_low_2R;
 uint32_t low_gainL,low_gainR;
 
 inline void Doppler_init_() {
+  uint32_t i;
   set_led2(0);
   set_led4(0);
 
@@ -56,6 +57,10 @@ inline void Doppler_init_() {
   filter_low_2R = 0;
   low_gainL = 0;
   low_gainR = 0;
+
+  for (i=0; i<Max_Delay;i++) {
+    delay_line.S16[i] = 0;
+  }
 }
 
 inline void Doppler_loop_() {

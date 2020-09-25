@@ -72,6 +72,7 @@ struct Nozori_84_THOMAS : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         THOMAS_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

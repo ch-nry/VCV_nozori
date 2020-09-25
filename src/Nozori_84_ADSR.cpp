@@ -72,6 +72,7 @@ struct Nozori_84_ADSR : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         ADSR_Loop_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

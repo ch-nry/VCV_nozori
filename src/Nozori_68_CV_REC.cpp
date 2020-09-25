@@ -72,6 +72,7 @@ struct Nozori_68_CV_REC : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         CV_REC_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 

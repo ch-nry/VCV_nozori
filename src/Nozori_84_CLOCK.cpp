@@ -72,6 +72,7 @@ struct Nozori_84_CLOCK : Module {
 
     void onAdd() override {
         SR_needed = 96000.;
+        init_variable();
         init_random();
         CLK_ADSR_init_();
         lights[TEXT_LIGHT_48].setBrightness(1.f); 
