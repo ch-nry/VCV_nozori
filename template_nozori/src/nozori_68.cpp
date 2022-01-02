@@ -68,6 +68,7 @@ struct Nozori_all : Module {
     #include "module_src_file.ino"
     int reduce_data_speed_index;
 	int warn_status = 0;
+	bool dark = 0;
 
     void onAdd() override {
         SR_needed = 96000.;
@@ -108,13 +109,25 @@ struct Nozori_all : Module {
         outputs[OUT1_OUTPUT].setVoltage( ((float)audio_outL - 2147483648.)/322122547.2 );
         outputs[OUT2_OUTPUT].setVoltage( ((float)audio_outR - 2147483648.)/322122547.2 ); 
     }
+
+	json_t* dataToJson() override {
+		json_t* rootJ = json_object();
+		json_object_set_new(rootJ, "dark", json_boolean(dark));
+		return rootJ;
+	}
+
+	void dataFromJson(json_t* rootJ) override {
+		json_t* darkJ = json_object_get(rootJ, "dark");
+		if (darkJ)
+			dark = json_boolean_value(darkJ);
+	}
 };
 
 struct WarningWidget : TransparentWidget {
 	int *warn_status = nullptr;
 	void draw(const DrawArgs& args) override {
 		NVGcolor backgroundColor = nvgRGBA(0xff,0x52,0x5b,0xa0);
-		NVGcolor textColor = nvgRGB(0x00, 0x00, 0x00);
+		NVGcolor textColor = nvgRGB(0xff, 0xff, 0xff);
 		std::string text = "";
 		if (visible && warn_status) {
 			if(*warn_status == 48) {
@@ -142,9 +155,23 @@ struct NozoriKnob : RoundKnob {
 };
 
 struct Nozori_allWidget : ModuleWidget {
+	SvgPanel *panelStandard;
+	SvgPanel *panelDark;
 	Nozori_allWidget(Nozori_all* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/module_face.svg")));
+
+		box.size = Vec(12 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT);
+		panelStandard = new SvgPanel();
+		panelStandard->box.size = box.size;
+		panelStandard->setBackground(APP->window->loadSvg(asset::plugin(pluginInstance, "res/module_face.svg")));
+		panelStandard->show();
+		addChild(panelStandard);
+
+		panelDark = new SvgPanel();
+		panelDark->box.size = box.size;
+		panelDark->setBackground(APP->window->loadSvg(asset::plugin(pluginInstance, "res/module_face_dark.svg")));
+		panelDark->hide();
+		addChild(panelDark);
 
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
@@ -179,6 +206,30 @@ struct Nozori_allWidget : ModuleWidget {
 		if (module)
    			warningDisplay->warn_status = &module->warn_status;
 		addChild(warningDisplay);
+	}
+
+	void appendContextMenu(Menu* menu) override {
+		Nozori_all* module = dynamic_cast<Nozori_all*>(this->module);
+		assert(module);
+
+		menu->addChild(new MenuSeparator);
+
+		menu->addChild(createBoolPtrMenuItem("Dark Mode", "", &module->dark));
+	}
+
+	void step() override {
+		if (module) {
+			Nozori_all *module = dynamic_cast<Nozori_all*>(this->module);
+			assert(module);
+			if (module->dark == 0) {
+				panelStandard->show();
+				panelDark->hide();
+			} else {
+				panelStandard->hide();
+				panelDark->show();
+			}
+		}
+		ModuleWidget::step();
 	}
 };
 

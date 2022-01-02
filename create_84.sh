@@ -3,7 +3,7 @@ cp template_nozori/src/nozori_84.cpp src/$1.cpp
 sed -i 's/Nozori_all/'$1'/g' src/$1.cpp
 sed -i 's/module_src_file.ino/'$2'/' src/$1.cpp
 sed -i 's/module_function/'$3'/' src/$1.cpp
-sed -i 's/module_face.svg/'$4'/' src/$1.cpp
+sed -i 's/module_face/'$4'/' src/$1.cpp
 
 sed -i 's/}//' src/plugin.cpp
 echo "  p->addModel(modelNozori_all);" >> src/plugin.cpp
