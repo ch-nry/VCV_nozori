@@ -43,8 +43,6 @@ struct Nozori_84_ADSR : Module {
 	enum LightIds {
 		LED4_LIGHT,
 		LED2_LIGHT,
-        TEXT_LIGHT_48,
-        TEXT_LIGHT_96,
 		NUM_LIGHTS
 	};
 
@@ -69,14 +67,14 @@ struct Nozori_84_ADSR : Module {
     #include "a_utils.h"
     #include "m84_ADSR.ino"
     int reduce_data_speed_index;
+	int warn_status = 0;
+	bool dark = 0;
 
     void onAdd() override {
         SR_needed = 96000.;
         init_variable();
         init_random();
         ADSR_Loop_init_();
-        lights[TEXT_LIGHT_48].setBrightness(1.f); 
-        lights[TEXT_LIGHT_96].setBrightness(1.f); 
         reduce_data_speed_index = 0;
         ADSR_Loop_loop_(); 
     }
@@ -97,56 +95,53 @@ struct Nozori_84_ADSR : Module {
             ADSR_Loop_loop_(); // process data loop only at 1/4 the sampling rate in order to be more accurate with the hardware timing
             if (args.sampleRate != SR_needed) {
                 if (SR_needed == 96000.) { 
-                    lights[TEXT_LIGHT_96].setBrightness(0.f);
+                    warn_status = 96;
                 } else if (SR_needed == 48000.) { 
-                    lights[TEXT_LIGHT_48].setBrightness(0.f);
+                    warn_status = 48;
                 } 
             } else {
-                lights[TEXT_LIGHT_96].setBrightness(1.f);
-                lights[TEXT_LIGHT_48].setBrightness(1.f);
+                warn_status = 0;
             }
         }
         ADSR_Loop_audio_();
         outputs[OUT1_OUTPUT].setVoltage( ((float)audio_outL - 2147483648.)/322122547.2 );
         outputs[OUT2_OUTPUT].setVoltage( ((float)audio_outR - 2147483648.)/322122547.2 ); 
     }
-};
 
-
-template <typename BASE>
-struct warningText_48 : BASE {
-	warningText_48() {
-		this->box.size = mm2px(Vec(61., 128.5));
-        this->color.a = 0;
+	json_t* dataToJson() override {
+		json_t* rootJ = json_object();
+		json_object_set_new(rootJ, "dark", json_boolean(dark));
+		return rootJ;
 	}
-	void drawLight(const widget::Widget::DrawArgs& args) override {
-		nvgBeginPath(args.vg);
-		if (this->color.a == 0.) { // Off actually means on, because all lights are on in the module selection menu
-		    nvgRect(args.vg,0,  mm2px(123), this->box.size.x, mm2px(5.5));
-		    nvgFillColor(args.vg, nvgRGBA(0x00,0x00,0x00,0x80));
-			nvgFill(args.vg);
-		    nvgFillColor(args.vg, nvgRGB(0xff,0xff,0xff));
-    		nvgFontSize(args.vg, 10);
-			nvgText(args.vg, mm2px(0.5), mm2px(127), "This module need a 48KHz Sampling Rate", NULL);
-		}
+
+	void dataFromJson(json_t* rootJ) override {
+		json_t* darkJ = json_object_get(rootJ, "dark");
+		if (darkJ)
+			dark = json_boolean_value(darkJ);
 	}
 };
 
-template <typename BASE>
-struct warningText_96 : BASE {
-	warningText_96() {
-		this->box.size = mm2px(Vec(61., 128.5));
-        this->color.a = 0;
-	}
-	void drawLight(const widget::Widget::DrawArgs& args) override {
-		nvgBeginPath(args.vg);
-		if (this->color.a == 0.) { // Off actually means on, because all lights are on in the module selection menu
-		    nvgRect(args.vg,0,  mm2px(123), this->box.size.x, mm2px(5.5));
-		    nvgFillColor(args.vg, nvgRGBA(0x00,0x00,0x00,0x80));
+struct WarningWidget : TransparentWidget {
+	int *warn_status = nullptr;
+	void draw(const DrawArgs& args) override {
+		NVGcolor backgroundColor = nvgRGBA(0xff,0x52,0x5b,0xa0);
+		NVGcolor textColor = nvgRGB(0xff, 0xff, 0xff);
+		std::string text = "";
+		if (visible && warn_status) {
+			if(*warn_status == 48) {
+				text = "This module needs a 48KHz Sample Rate";
+			} else if(*warn_status == 96) {
+				text = "This module needs a 96KHz Sample Rate";
+			} else {
+				return;
+			}
+			nvgBeginPath(args.vg);
+			nvgRoundedRect(args.vg, 0.0, 0.0, box.size.x, box.size.y, 4.0);
+			nvgFillColor(args.vg, backgroundColor);
 			nvgFill(args.vg);
-		    nvgFillColor(args.vg, nvgRGB(0xff,0xff,0xff));
-    		nvgFontSize(args.vg, 10);
-			nvgText(args.vg, mm2px(0.), mm2px(127), "This module need a 96KHz Sampling Rate", NULL);
+			nvgFontSize(args.vg, 9);
+			nvgFillColor(args.vg, textColor);
+			nvgText(args.vg, 3, 11, text.c_str(), NULL);
 		}
 	}
 };
@@ -157,16 +152,24 @@ struct NozoriKnob : RoundKnob {
 	}
 };
 
-struct NoLight : GrayModuleLightWidget {
- 	NoLight() {
- 		addBaseColor(SCHEME_BLACK);
- 	}
-};
-
 struct Nozori_84_ADSRWidget : ModuleWidget {
+	SvgPanel *panelStandard;
+	SvgPanel *panelDark;
 	Nozori_84_ADSRWidget(Nozori_84_ADSR* module) {
 		setModule(module);
-		setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, "res/nozori_84_ADSR.svg")));
+
+		box.size = Vec(12 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT);
+		panelStandard = new SvgPanel();
+		panelStandard->box.size = box.size;
+		panelStandard->setBackground(APP->window->loadSvg(asset::plugin(pluginInstance, "res/nozori_84_ADSR.svg")));
+		panelStandard->show();
+		addChild(panelStandard);
+
+		panelDark = new SvgPanel();
+		panelDark->box.size = box.size;
+		panelDark->setBackground(APP->window->loadSvg(asset::plugin(pluginInstance, "res/nozori_84_ADSR_dark.svg")));
+		panelDark->hide();
+		addChild(panelDark);
 
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, 0)));
@@ -192,8 +195,36 @@ struct Nozori_84_ADSRWidget : ModuleWidget {
 		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(2.9, 41.5)), module, Nozori_84_ADSR::LED2_LIGHT));
 
 		addParam(createParamCentered<NKK>(mm2px(Vec(30.6, 14.3)), module, Nozori_84_ADSR::SWITCH_PARAM));
-		addChild(createLightCentered<warningText_48<NoLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_84_ADSR::TEXT_LIGHT_48));
-		addChild(createLightCentered<warningText_96<NoLight>>(mm2px(Vec(30.5, 64.3)), module, Nozori_84_ADSR::TEXT_LIGHT_96));
+
+		math::Vec warnSize = Vec(box.size.x - 15, 15);
+		WarningWidget* warningDisplay = createWidget<WarningWidget>(Vec(box.size.x/2 - warnSize.x/2, box.size.y - warnSize.y));
+		warningDisplay->box.size = warnSize;
+		if (module)
+   			warningDisplay->warn_status = &module->warn_status;
+		addChild(warningDisplay);
+	}
+	void appendContextMenu(Menu* menu) override {
+		Nozori_84_ADSR* module = dynamic_cast<Nozori_84_ADSR*>(this->module);
+		assert(module);
+
+		menu->addChild(new MenuSeparator);
+
+		menu->addChild(createBoolPtrMenuItem("Dark Mode", "", &module->dark));
+	}
+
+	void step() override {
+		if (module) {
+			Nozori_84_ADSR *module = dynamic_cast<Nozori_84_ADSR*>(this->module);
+			assert(module);
+			if (module->dark == 0) {
+				panelStandard->show();
+				panelDark->hide();
+			} else {
+				panelStandard->hide();
+				panelDark->show();
+			}
+		}
+		ModuleWidget::step();
 	}
 };
 
