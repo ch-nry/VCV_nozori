@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="19.000362mm"
    height="19.000389mm"
    viewBox="0 0 19.000362 19.000389"
    version="1.1"
    id="svg111794"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="NozoriKnob.svg">
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="NozoriKnob.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs111788" />
   <sodipodi:namedview
@@ -26,20 +26,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.2"
-     inkscape:cx="18.512237"
-     inkscape:cy="31.603086"
+     inkscape:cx="18.482143"
+     inkscape:cy="31.607143"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer2"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1918"
-     inkscape:window-height="996"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1900"
+     inkscape:window-height="1040"
+     inkscape:window-x="1930"
+     inkscape:window-y="1110"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="0" />
   <metadata
      id="metadata111791">
     <rdf:RDF>
@@ -59,7 +60,7 @@
      style="display:inline">
     <path
        inkscape:connector-curvature="0"
-       style="fill:#292929;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.28259939"
+       style="fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.28259939"
        d="m 17.110482,9.500195 c 0,4.203666 -3.40772,7.610314 -7.61028,7.610314 -4.2036697,0 -7.6103198,-3.406648 -7.6103198,-7.610314 0,-4.2025609 3.4066501,-7.6103119 7.6103198,-7.6103119 4.20256,0 7.61028,3.407751 7.61028,7.6103119"
        id="path110586-5" />
   </g>
@@ -70,7 +71,7 @@
      style="display:inline">
     <path
        inkscape:connector-curvature="0"
-       style="fill:#110000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.22775178"
+       style="fill:#241f1c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.22775178"
        d="m 15.605005,9.5001952 c 0,3.4035968 -2.733601,6.1618678 -6.1048069,6.1618678 -3.3720948,0 -6.104838,-2.758271 -6.104838,-6.1618678 0,-3.4027017 2.7327432,-6.1618666 6.104838,-6.1618666 3.3712059,0 6.1048069,2.7591649 6.1048069,6.1618666"
        id="path110586-7" />
   </g>
