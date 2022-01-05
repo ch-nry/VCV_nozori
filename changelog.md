@@ -1,3 +1,5 @@
+2.1.3 : update to Rack version 2 thanks to netboy3
+        add a dark mode thanks to netboy3
 1.1.9 : fix more initialisation bug
         This should fix crash when loading some modules and empty delay line of various modules
 1.1.8 : fix initialisation bug
